@@ -1,7 +1,7 @@
 import sys
 import os
 import hashlib
-import shtil
+import shutil
 
 
 num_expected_cnn_stories = 92579
@@ -27,7 +27,7 @@ def read_text_file(text_file):
 def hashhex(s):
   """Returns a heximal formated SHA1 hash of the input string."""
   h = hashlib.sha1()
-  h.update(s)
+  h.update(s.encode('utf-8'))
   return h.hexdigest()
 
 
